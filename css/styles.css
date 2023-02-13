@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background: #d9e5f9;
+    font-family: "Raleway", sans-serif;
+}
+.tabs{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    column-width: 450px;
+    height: 250px;
+}
+.tabs .tab-header{
+    background: #f5f5f5;
+    padding: 10px;
+    display:flex;        
+}
+.tabs .tab-header > div{
+    position: relative;
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    z-index: 2;
+    font-weight: 600;
+    color: #888;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.tabs .tab-header > div.active{
+    color: #387be2;
+}
+.tabs .tab-indicator {
+    position: absolute;
+    width: calc(25% - 5px);
+    height: 40px;
+    background: #d9e5f9;
+    top: 10px;
+    left: 10px;
+    border-radius: 20px;
+    transition: all 300ms ease-in-out;
+}
+.tabs .tab-body{
+    position: relative;
+    padding: 10px;
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    height: calc(100% - 60px);
+    overflow: hidden;
+}
+.tabs .tab-body > div{
+    position: absolute;
+    opacity:0;
+    top: -100%;
+    transform: translateY(-10px);
+    transition: opacity 300ms ease-in-out,
+                  transform 300ms ease-in-out;
+}
+.tabs .tab-body > div.active {
+    transform: translateY(0px);
+    top: 30px;
+    opacity: 1;
+}
+.tabs .tab-body h1{
+    color: #222;
+    margin-bottom: 10px;
+}
+.tabs .tab-body p{
+    color: #555;
+    font-size: 15px;
+}
